@@ -10,7 +10,10 @@ const app = Vue.createApp({
       this.cart.push(id);
     },
     remove(id) {
-        this.cart = this.cart.splice(id, 1);
-    }
+      const index = this.cart.indexOf(id);
+      if (index > -1) {
+        this.cart.splice(index, 1);
+      }
+    },
   },
 });
